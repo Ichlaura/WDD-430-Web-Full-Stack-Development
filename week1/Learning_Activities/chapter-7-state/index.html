@@ -1,0 +1,32 @@
+function HomePage() {
+  const names = ['Ada Lovelace', 'Grace Hopper', 'Margaret Hamilton'];
+ 
+  return (
+    <div>
+      <Header title="Develop. Preview. Ship." />
+      <ul>
+        {names.map((name) => (
+          <li key={name}>{name}</li>
+        ))}
+      </ul>
+      <button>Like</button>
+    </div>
+  );
+}
+
+
+function HomePage() {
+  // ...
+  const [likes, setLikes] = React.useState(0);
+ 
+  function handleClick() {
+    setLikes(likes + 1);
+  }
+ 
+  return (
+    <div>
+      {/* ... */}
+      <button onClick={handleClick}>Likes ({likes})</button>
+    </div>
+  );
+}
